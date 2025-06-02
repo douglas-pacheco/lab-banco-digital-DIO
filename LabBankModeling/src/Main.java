@@ -6,7 +6,7 @@ public class Main {
 		venilton.setName("Venilton");
 		
 		Account checkingAccount = new CheckingAccount(venilton);
-		Account savingsAccount = new SavingsAccount(venilton);
+		Account savingsAccount = new StandartSavingsAccount(venilton);
 
 		checkingAccount.deposit(100);
 		checkingAccount.transfer(100, savingsAccount);
