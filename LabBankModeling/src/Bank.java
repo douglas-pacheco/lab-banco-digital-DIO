@@ -5,9 +5,9 @@ import java.util.List;
 
 @Setter
 @Getter
-public class Banco {
+public class Bank {
 
 	private String nome;
-	private List<Conta> contas;
+	private List<Account> accounts;
 
 }

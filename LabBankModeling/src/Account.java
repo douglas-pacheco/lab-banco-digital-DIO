@@ -1,6 +1,6 @@
 import lombok.Getter;
 
-public abstract class Conta implements IConta {
+public abstract class Account implements IAccount {
 	
 	private static final int AGENCIA_PADRAO = 1;
 	private static int SEQUENCIAL = 1;
@@ -11,12 +11,12 @@ public abstract class Conta implements IConta {
     protected int numero;
 	@Getter
     protected double saldo;
-	protected Cliente cliente;
+	protected Customer customer;
 
-	public Conta(Cliente cliente) {
-		this.agencia = Conta.AGENCIA_PADRAO;
+	public Account(Customer customer) {
+		this.agencia = Account.AGENCIA_PADRAO;
 		this.numero = SEQUENCIAL++;
-		this.cliente = cliente;
+		this.customer = customer;
 	}
 
 	@Override
@@ -30,13 +30,13 @@ public abstract class Conta implements IConta {
 	}
 
 	@Override
-	public void transferir(double valor, IConta contaDestino) {
+	public void transferir(double valor, IAccount contaDestino) {
 		this.sacar(valor);
 		contaDestino.depositar(valor);
 	}
 
     protected void imprimirInfosComuns() {
-		System.out.printf("Titular: %s%n", this.cliente.getNome());
+		System.out.printf("Titular: %s%n", this.customer.getNome());
 		System.out.printf("Agencia: %d%n", this.agencia);
 		System.out.printf("Numero: %d%n", this.numero);
 		System.out.printf("Saldo: %.2f%n", this.saldo);

@@ -1,7 +1,7 @@
 
-public class ContaCorrente extends Conta {
+public class CheckingAccount extends Account {
 
-	public ContaCorrente(Cliente cliente) {
+	public CheckingAccount(Customer cliente) {
 		super(cliente);
 	}
 

@@ -1,8 +1,8 @@
 
-public class ContaPoupanca extends Conta {
+public class SavingsAccount extends Account {
 
-	public ContaPoupanca(Cliente cliente) {
-		super(cliente);
+	public SavingsAccount(Customer customer) {
+		super(customer);
 	}
 
 	@Override

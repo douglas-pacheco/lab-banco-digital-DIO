@@ -3,7 +3,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class Cliente {
+public class Customer {
 
 	private String nome;
 
