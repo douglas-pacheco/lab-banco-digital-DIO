@@ -3,16 +3,16 @@ public class Main {
 
 	public static void main(String[] args) {
 		Customer venilton = new Customer();
-		venilton.setNome("Venilton");
+		venilton.setName("Venilton");
 		
-		Account cc = new CheckingAccount(venilton);
-		Account poupanca = new SavingsAccount(venilton);
+		Account checkingAccount = new CheckingAccount(venilton);
+		Account savingsAccount = new SavingsAccount(venilton);
 
-		cc.deposit(100);
-		cc.transfer(100, poupanca);
+		checkingAccount.deposit(100);
+		checkingAccount.transfer(100, savingsAccount);
 		
-		cc.printStatement();
-		poupanca.printStatement();
+		checkingAccount.printStatement();
+		savingsAccount.printStatement();
 	}
 
 }
