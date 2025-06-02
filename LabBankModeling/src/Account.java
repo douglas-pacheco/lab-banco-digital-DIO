@@ -2,43 +2,43 @@ import lombok.Getter;
 
 public abstract class Account implements IAccount {
 	
-	private static final int AGENCIA_PADRAO = 1;
-	private static int SEQUENCIAL = 1;
+	private static final int DEFAULT_BRANCH = 1;
+	private static int SEQUENTIAL = 1;
 
 	@Getter
-    protected int agencia;
+    protected int branch;
 	@Getter
-    protected int numero;
+    protected int accountNumber;
 	@Getter
-    protected double saldo;
+    protected double balance;
 	protected Customer customer;
 
 	public Account(Customer customer) {
-		this.agencia = Account.AGENCIA_PADRAO;
-		this.numero = SEQUENCIAL++;
+		this.branch = Account.DEFAULT_BRANCH;
+		this.accountNumber = SEQUENTIAL++;
 		this.customer = customer;
 	}
 
 	@Override
-	public void sacar(double valor) {
-		saldo -= valor;
+	public void withdraw(double valor) {
+		balance -= valor;
 	}
 
 	@Override
-	public void depositar(double valor) {
-		saldo += valor;
+	public void deposit(double valor) {
+		balance += valor;
 	}
 
 	@Override
-	public void transferir(double valor, IAccount contaDestino) {
-		this.sacar(valor);
-		contaDestino.depositar(valor);
+	public void transfer(double valor, IAccount contaDestino) {
+		this.withdraw(valor);
+		contaDestino.deposit(valor);
 	}
 
-    protected void imprimirInfosComuns() {
-		System.out.printf("Titular: %s%n", this.customer.getNome());
-		System.out.printf("Agencia: %d%n", this.agencia);
-		System.out.printf("Numero: %d%n", this.numero);
-		System.out.printf("Saldo: %.2f%n", this.saldo);
+    protected void printCommonInfo() {
+		System.out.printf("Customer: %s%n", this.customer.getName());
+		System.out.printf("Branch: %d%n", this.branch);
+		System.out.printf("Account Number: %d%n", this.accountNumber);
+		System.out.printf("Balance: %.2f%n", this.balance);
 	}
 }

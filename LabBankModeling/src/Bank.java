@@ -7,7 +7,7 @@ import java.util.List;
 @Getter
 public class Bank {
 
-	private String nome;
+	private String name;
 	private List<Account> accounts;
 
 }

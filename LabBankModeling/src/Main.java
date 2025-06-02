@@ -8,11 +8,11 @@ public class Main {
 		Account cc = new CheckingAccount(venilton);
 		Account poupanca = new SavingsAccount(venilton);
 
-		cc.depositar(100);
-		cc.transferir(100, poupanca);
+		cc.deposit(100);
+		cc.transfer(100, poupanca);
 		
-		cc.imprimirExtrato();
-		poupanca.imprimirExtrato();
+		cc.printStatement();
+		poupanca.printStatement();
 	}
 
 }

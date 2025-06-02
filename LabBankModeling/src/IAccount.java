@@ -1,11 +1,11 @@
 
 public interface IAccount {
 	
-	void sacar(double valor);
+	void withdraw(double amount);
 	
-	void depositar(double valor);
+	void deposit(double amount);
 	
-	void transferir(double valor, IAccount contaDestino);
+	void transfer(double amount, IAccount destinationAccount);
 	
-	void imprimirExtrato();
+	void printStatement();
 }

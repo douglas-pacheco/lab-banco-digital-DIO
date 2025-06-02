@@ -5,6 +5,6 @@ import lombok.Setter;
 @Getter
 public class Customer {
 
-	private String nome;
+	private String name;
 
 }
